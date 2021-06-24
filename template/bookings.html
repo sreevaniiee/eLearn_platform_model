@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid" align="center">
+          <div class="row">
+            <div class="col-md-12" style="width: 50%;">
+              <div class="card" style="width: 50%;">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Your Bookings</h4>
+                  <!--<p class="card-category"> Here is a subtitle for this table</p>-->
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class=" text-primary">
+                        <!-- <th>Course ID</th> -->
+                        <th>Courses Registered</th>                        
+                        <th>Cost</th>
+                        <!-- <th>{{Course}}</th> -->
+                      </thead>
+                      <tbody>
+                        <tr>
+                          {% for course in courseDetails %}
+                            <tr>
+                            <td> {{course[0]}} </td>
+                            <td> {{course[1]}} </td>
+                            <!-- <td> {{course[2]}} </td> -->
+                            </tr>
+                          {% endfor %}                        
+                        </tbody><hr>
+                      </table>
+                    </div>
+                  </div>
+				      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

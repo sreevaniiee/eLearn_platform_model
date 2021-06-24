@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <div class="content-wrapper" align="center">
+            <div class="two-column-wrapper">
+                <div class="profile-image-wrapper" align="center">
+                     <img src="static/images/thumb1.jpg" alt="">
+                </div>
+                <div class="profile-content-wrapper" align="center">
+                   <h1>Make A Global Impact </h1>
+                   <p>Create an online  video course and earn money by teaching the people around the world. </p>
+                   <div class="content-wrapper" align="center"></div>
+                   <form action="/binstructor" method="post">
+                        <label for="courses">Select the Course, You wish to Teach: </label><br><br>
+                        <select class="form-select" id="instructor" name="name" style="width: 25%">
+                        <option selected disabled>  </option>
+                            {% for course in courseDetails %}
+                            <option value="{{course[2]}}">{{course[2]}}</option>
+                            {% endfor %}
+                        </select><br><br>
+                        <button type="submit" class="btn btn-success" id="submit" style="width: 25%">Become an instructor!</button>
+                    </form>
+                </div>
+            </div>
+            <form action="/status">
+                <label for="status">Click here to check, the status of your application</label><br><br>
+                <button type="submit" class="btn btn-danger" id="submit" style="width: 25%">Check Status!</button>
+             </form>
+        </div>
+                {% endblock %}
